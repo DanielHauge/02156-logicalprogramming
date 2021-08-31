@@ -1,0 +1,8 @@
+
+halfadder(Bit1,Bit2,Sum,Carry) :-
+    and(Bit1,Bit2,Carry),
+    not(Carry,X),
+    or(Bit1,Bit2,Y),
+    and(X,Y,Sum).
+
+
