@@ -1,0 +1,43 @@
+\section*{Problem 1}
+
+
+\subsection*{Question 1.1}
+
+Truth table is constructed using semantics written in the assignment description.
+
+\[
+\begin{array}{C|C|C|C|C|C|C}
+$A$ & $B$ & $\neg A$ & $A \land B$ & $A \lor B$ & $A \to B$ & $A \leftrightarrow B$\\
+\hline
+T & T & F & T & T & T & T \\
+T & F & F & F & T & F & F \\
+T & X & F & X & T & X & X \\
+F & T & T & F & T & T & F \\
+F & F & T & F & F & T & T \\
+F & X & T & F & X & T & $\neg$ X \\
+X & T & $\neg$ X & X & T & T & X \\
+X & F & $\neg$ X & F & X & $\neg$ X & $\neg$ X\\
+X & X & $\neg$ X & X & X & T & T 
+\end{array}
+\]
+
+The lack of semantics for $X$ will make some cases just terminate with $\neg X$. 
+An interesting observation from comparison is that some logical operations disregard or will work just fine without classical truth values. 
+Like implication $X \to X$ will give True, as with implication it does not matter what value it is operating with.  
+
+
+\subsection*{Question 1.2}
+When p is T:
+
+$$ \neg T \land T = F \land T = \doubleunderline{F} $$
+
+When p is F:
+
+$$ \neg F \land F = T \land F = \doubleunderline{F} $$
+
+When p is X:
+
+$$ \neg X \land X = \doubleunderline{F} $$
+
+As there is no semantics for the negation of X, there is no better evaluation of ¬X. Hence we conclude the X case to be false, as the values is not equal and neither of them is T.
+
