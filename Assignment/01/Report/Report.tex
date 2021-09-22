@@ -33,7 +33,10 @@
 \usepackage{tabu}
 \usepackage{parskip}
 \usepackage{qtree}
+\usepackage{tcolorbox}
+\newcommand{\code}[1]{\begin{tcolorbox} \texttt{#1} \end{tcolorbox}}
 \def\doubleunderline#1{\underline{\underline{#1}}}
+
 
 \begin{document}
 
@@ -43,7 +46,7 @@
 \includegraphics[width=0.15\textwidth]{images/dtu.eps}~\\[1cm]
     DTU - Technical University of Denmark
     \\[0.5cm]
-    Date of submission: \today
+    Date submitted: \today
     \\
 }
 \date{} % blind date

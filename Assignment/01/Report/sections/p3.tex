@@ -1,5 +1,28 @@
+\newpage
 \section{Problem 3}
 
 \subsection{Question 3.1}
 
+See the prolog file for the predicate.
+
+The predicate should fail when Elem is not occuring twice.
+\code{?- member2(1,[1,2,3,4]).\newline false.}
+
+The predicate should succed when 2 occurences of Elem are present in List.
+\code{?- member2(1,[1,2,3,4,1]).\newline true ;\newline false.}
+
+The predicate can be used as quiery to find elements occuring twice in List.
+\code{?- member2(X,[1,2,3,4,2,4]).\newline X = 2 ;\newline X = 4 ;\newline false.}
+
+The predicate will give multiple answers on backtracking.
+\code{?- member2(3, [3,3,3]).\newline true ;\newline true ;\newline true ;\newline false.}
+
+The predicate can give potentially infinite answers for lists which has Elem twice occuring.
+\code{?- member2(1,X).\newline X = [1, 1|\_358] ;\newline X = [1, \_1022, 1|\_1036] .}
+
+The predicate can used in a query with variables only. Although is seems pointless to do so.
+\code{?- member2(X,A).\newline A = [X, X|\_2830] ;\newline A = [X, \_3564, X|\_3578] .}
+
+
 \subsection{Question 3.2}
+See the prolog file for the predicate. All tests from Question 3.1 has been done with $member2a$. All tests give identical results (apart from generic values).

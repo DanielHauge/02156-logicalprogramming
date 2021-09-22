@@ -1,0 +1,18 @@
+\section{Code}
+\code{
+% Standard (How i prefer)
+member2s(Elem, List) :- select(Elem, List, ListElemRemoved), member(Elem, ListElemRemoved).
+
+% Question 3.1
+    % When head and head og tail is the same as element, there is 2 occurences of the element in the list (The next 2 elements are)
+    member2(Elem, [Elem|[Elem|_]]). 
+    % If head is the element, recurse with it as head again and "forget"/"skip" the head of the tail which was not the desired element.
+    member2(Elem,[Elem|[_|Tail]]) :- member2(Elem, [Elem|Tail]). 
+    % In case the head of the list is not the desired element, recurse with tail.
+    member2(Elem, [_|Tail]) :- member2(Elem, Tail).
+
+% Question 3.2
+    % An append of the element "Somewhere" in the list in conjunction with an append of the element before a list which has allready done an append of element atleast once.
+    % These 2 appends ensures that the element Elem has been appended to the List atleast twice.
+    member2a(Elem, List) :- append(_, [Elem|Once], List), append(_, [Elem|_], Once).
+}
