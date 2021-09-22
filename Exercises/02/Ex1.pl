@@ -1,0 +1,1 @@
+interval_member(I, L, IMin, IMax) :- member(I, L), I =< IMax, I >= IMin.

@@ -1,0 +1,1 @@
+is_list(List) :- List = [_|_] ; List = [].
