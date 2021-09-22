@@ -5,25 +5,28 @@
 Refuting the validity of the expression, we negate it and try to find counter example:
 
 \Tree[.\textit{$\neg (((s \to p) \land ((\neg s \to t) \land (\neg p \to \neg t))) \to p)$} 
-        [ .\textit{$\neg ((s \to p) \land ((\neg s \to t) \land (\neg p \to \neg t))) , \neg p$} 
-            [.\textit{$\neg (s \to p), \neg p$}
-                [.\textit{$\neg s, \neg p, \neg p$} \textit{$\odot$} ] ]
-            [.\textit{$\neg ((\neg s \to t) \land (\neg p \to \neg t)), \neg p$} 
-                [.\textit{$\neg (\neg s \to t), \neg p$} 
-                    [.\textit{$\neg s , \neg t, \neg p$} \textit{$\odot$} ]
-                ]
-                [.\textit{$\neg (\neg p \to \neg t), \neg p$} 
-                    [.\textit{$\neg p , t, \neg p$} \textit{$\odot$} ]
-                ]
-            ]    
+        [ .\textit{$((s \to p) \land ((\neg s \to t) \land (\neg p \to \neg t))) , \neg p$} 
+            [.\textit{$s \to p , (\neg s \to t) \land (\neg p \to \neg t), \neg p$}
+                [.\textit{$p , (\neg s \to t) \land (\neg p \to \neg t), \neg p$} \textit{$\times$} ] 
+                [.\textit{$\neg s , (\neg s \to t) \land (\neg p \to \neg t), \neg p$} 
+                    [.\textit{$\neg s , (\neg s \to t) , (\neg p \to \neg t), \neg p$} 
+                        [.\textit{$\neg s , s, (\neg p \to \neg t), \neg p$} \textit{$\times$} ]
+                        [.\textit{$\neg s , t, (\neg p \to \neg t), \neg p$} 
+                            [.\textit{$\neg s , t, p, \neg p$} \textit{$\times$} ] 
+                            [.\textit{$\neg s , t, \neg t, \neg p$} \textit{$\times$} ] 
+                        ]
+                    ]  
+                ] 
+            ]
         ]
-    ]
+]
 
-
-From the first right branch, we can see that the expression is not valid. As if s is true,
-Watch week 4 solutions for inspiration about refutionation blabla
+Concluding a complete closed tableau, thus we can say that the formula is valid hence we can say it's a tautology.
 
 \subsection*{Question 2.2}
-Brug den logiske regl på udtrykket og se det giver mening:
-
-\subsection*{Question 2.3}
+Considering the logical equivalence, we observe that it can be used to argument for the following:
+$$ s \to p \equiv \neg p \to \neg s$$
+and
+$$ \neg p \to \neg t \equiv  t \to p$$
+Therefor we can "swap" the parts marked with underline below to show equivalence with the formular:
+$$ ((\underline{s \to p}) \land ((\neg s \to t) \land (\underline{\neg p \to \neg t}))) \to p $$

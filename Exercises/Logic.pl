@@ -38,7 +38,7 @@ symbol_opr(\,   dis).
 symbol_opr(&,   con).
 symbol_opr(~,   neg).
 
-%
+%*
 % tt(Fml,V,TV)
 %   under the evaluation V the formula Fml has the truth value TV
 %
@@ -62,6 +62,8 @@ opr(imp,t,t,t). opr(imp,t,f,f). opr(imp,f,t,t). opr(imp,f,f,t).
 
 negate(t,f).
 negate(f,t).
+
+
 
 %
 % IO
