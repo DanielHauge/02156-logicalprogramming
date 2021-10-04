@@ -1,0 +1,34 @@
+\newpage
+\section*{Problem 4}
+See programs in 02156-A2-s201186.pl
+
+\subsection*{Question 4.1}
+The predicate succeeds if a student scored the given integer for a test or exam.
+\code{test(11). \\
+true. \\
+test(77). \\
+true. \\
+test(42). \\
+true.
+}
+
+The predicate fails if no student scored the given integer.
+\code{test(12). \\
+false. \\
+test(100). \\
+false.
+}
+
+The predicate fails if (+Integer) given is not an instantiated integer. 
+\code{?- test(X).\\
+false.
+}
+
+
+\subsection*{Question 4.2}
+The program $problem$ prints the students names where their test scores are more than twice their exam scores.
+\code{?- problem.\\
+alice\\
+carol\\
+true.
+}

@@ -1,0 +1,65 @@
+\newpage
+\section*{Problem 2}
+Considering the formular: $(p \land q) \to (q \land p)$
+
+\subsection*{Question 2.1}
+Refuting the validity of the proposition, we negate the formular and try to find counter example:
+
+\Tree[.\textit{$\neg ((p \land q) \to (q \land p))$} 
+        [ .\textit{$(p \land q) , \neg (q \land p)$} 
+            [.\textit{$p, q , \neg (q \land p)$}
+                [.\textit{$p, q , \neg q$} \textit{$\times$} ] 
+                [.\textit{$p, q , \neg p$} \textit{$\times$} ] 
+            ]
+        ]
+]
+
+Concluding with a complete closed tableau, thus we can say that the formula is valid hence we can say the propositional formular is a tautology.
+
+\subsection*{Question 2.2}
+The gentzen system, can be seen as previusly constructed tableaux tree upside down and signs reversed, such that we get the following:
+
+\begin{tabular}{ clr }
+    1. & $\vdash \neg p, \neg q, p$ & Axiom \\ 
+    2. & $\vdash \neg p, \neg q, q$ & Axiom \\ 
+    3. & $\vdash \neg p, \neg q, (q \land p)$ & $\beta \land , 1, 2$ \\  
+    4. & $\vdash \neg (p \land q) , (q \land p)$ & $\alpha \land , 3$ \\   
+    5. & $\vdash (p \land q) \to (q \land p)$ & $\alpha \to , 4$    
+\end{tabular}
+
+Therefor: $\vdash (A \land B) \to (B \land A)$
+
+\newpage
+
+\subsection*{Question 2.3}
+Using the hilbert systems axioms and rules:
+\begin{itemize}
+    \item One rule MP: $\vdash A, \vdash A \to B / \vdash B$
+    \item 1: $\vdash A \to B \to A$
+    \item 2: $\vdash (A \to B \to C) \to (A \to B) \to A \to C$
+    \item 3: $\vdash (\neg B \to \neg A) \to A \to B$
+    \item Deduction rule: $U \subset {A} \vdash B / U \vdash A \to B $
+    \item Assumption rule: $U \vdash A_i (A_i \in U)$
+\end{itemize}
+The proof can completed:
+
+\begin{tabular}{ clr }
+    1. & $\{q \to \neg p, \neg \neg p\} \vdash q \to \neg p$ & Assuption \\
+    2. & $\{q \to \neg p, \neg \neg p\} \vdash p \to \neg q$ & Contrapositive 1 \\
+    3. & $\{q \to \neg p, \neg \neg p\} \vdash (p \to \neg q) \to (q \to \neg p)$ & Assumption \\
+    4. & $\{q \to \neg p, \neg \neg p\} \vdash q \to \neg p$ & MP 2,3 \\
+    5. & $\{q \to \neg p, \neg \neg p\} \vdash \neg \neg(q \to \neg p)$ & Double negation 4 \\
+    6. & $\{q \to \neg p\} \vdash \neg \neg p \to \neg \neg(q \to \neg p)$ & Deduction 5 \\
+    7. & $\{q \to \neg p\} \vdash \neg(q \to \neg p) \to \neg p$ & Contrapositive 6 \\
+    8. & $\{q \to \neg p\} \vdash p \to (q \to \neg p)$ & Contrapositive 7 \\
+    9. & $\vdash (q \to \neg p) \to (p \to (q \to \neg p))$ & Deduction 8 \\
+    10. & $\vdash  \neg (p \to (q \to \neg p)) \to \neg (q \to \neg p) $ & Contrapositive 9 \\
+    11. & $\vdash (p \land q) \to (q \land p)$ & Def. of $\land$ 
+\end{tabular}
+
+Note, by definition of logical conjunction and negation of implication, it can be seen how the formular is derived.
+$$\neg (q \to \neg p) \equiv q \land p $$
+$$\neg (p \to (q \to \neg p)) \equiv p \land \neg (q \to \neg p)$$
+$$p \land (q \land p) \equiv p \land q$$
+
+Thus, concluding the hilbert system complete.

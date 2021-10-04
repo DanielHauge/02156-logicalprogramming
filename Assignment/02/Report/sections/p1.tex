@@ -1,0 +1,50 @@
+\section*{Problem 1}
+See programs in 02156-A2-s201186.pl
+
+\subsection*{Question 1.1}
+The predicate succeeds if the word is in the list with more than one category:
+\code{?- ambiguous(above).\\
+    true. \\ 
+    ?- ambiguous(about). \\
+     true.
+}
+
+The predicate succeeds only if (+Word) is in the list with more than one category, thus should fail if the word only has one category or is not in the list:
+\code{?- ambiguous(a).\\
+    false. \\ 
+    ?- ambiguous(absent). \\
+     false.
+}
+
+The predicate should fail if (+Word) is a variable.
+\code{?- ambiguous(X).\\
+false.
+}
+
+\newpage
+
+\subsection*{Question 1.2}
+Display will print the n'th most frequent words based of the list.
+\code{?- display(500).\\
+a det\\
+able a\\
+about adv\\
+about prep\\
+true.\\
+?- display(1000). \\
+a det \\
+ability n \\
+able a\\
+about adv\\
+about prep\\
+above adv\\
+above prep\\
+true.
+}
+
+Display will fail if no words are in the list for the given n, also if the n given is not an instantiated integer.
+\code{?- display(1). \\
+false. \\
+?- display(X). \\
+false.
+}

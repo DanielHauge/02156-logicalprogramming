@@ -1,0 +1,39 @@
+\newpage
+\section*{Problem 3}
+See programs in 02156-A2-s201186.pl
+
+\subsection*{Question 3.1}
+The predicate succeds if the first and last element is the same.
+\code{?- firstlast([1,2,3,4,5,6,5,4,3,2,1]).\\
+true ;\\
+false.\\
+?- firstlast([4,4]).\\
+true ;\\
+false.
+}
+The predicate fails if first and last element is not the same.
+\code{?- firstlast([6,6,2,7,4,1,3,7,6,6,9]). \\
+false.
+}
+
+The predicate fails when there is not atleast 2 elements:
+\code{?- firstlast([6]). \\                    
+false.\\
+?- firstlast([]). \\ 
+false.
+}
+
+The predicate can be queried with varibles:
+\code{?- firstlast(X). \\     
+X = [\_634, \_634] ;\\ 
+X = [\_634, \_1300, \_634] ;\\ 
+X = [\_634, \_1300, \_1972, \_634] .\\
+?- firstlast([X|[5]]).   \\
+X = 5 .\\
+?- firstlast([5|X]).\\
+X = [5] ;\\
+X = [\_4766, 5] .
+}
+
+\subsection*{Question 3.2}
+All tests from Question 3.1 has been done with $firstlasta$. All tests give identical results (apart from generic values).

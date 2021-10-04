@@ -1,0 +1,14 @@
+\newpage
+\section*{Problem 5}
+
+The shortened SeCav is included outcommented in 02156-A2-s201186.pl
+
+Notes on proving $((p \to q) \to p) \to p$.
+\begin{itemize}
+    \item $\Gamma \vdash \triangle$ can be proven if and only if $\vdash \neg \Gamma, \triangle$, \\ therefor we start applying rules for: $\neg(((p \to q) \to p) \to p)$  
+    \item Alpha implication is applied: $\neg(A_1 \to A_2)$
+    \item Beta implication is applied: $B_1 \to B_2$
+    \item Alpha implication is applied to the remaining implication.
+    \item Ext rule is applied to remove q as it is not neccesary for the proof, but also to put the non-negated formular/p first for the basic rule.
+    \item Basic rule is used to end the proof.
+\end{itemize}
