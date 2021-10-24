@@ -1,0 +1,59 @@
+\newpage
+\section*{Appendix}
+Here is a more extensive testing documentation from problem 1.
+
+\subsubsection*{Implication}
+\code{
+    ?- opr(imp, t, A, t).\\
+    A = t.\\
+    ?- opr(imp, t, f, A).\\
+    A = f.\\
+    ?- opr(imp, f, t, t).\\
+    true.\\
+    ?- opr(imp, f, f, t).\\
+    true.\\
+    ?- opr(imp, t, x, x).\\
+    true.\\
+    ?- opr(imp, x, t, x).\\
+    false.
+}
+
+\subsubsection*{Conjunction}
+\code{
+    ?- opr(con, x, x, x).\\
+    true.\\
+    ?- opr(con, t, hello, hello). \\
+    true.\\
+    ?- opr(con, f, x, f).\\
+    true.\\
+    ?- opr(con, t, A, t). \\
+    A = t.\\
+    ?- opr(con, A, A, x). \\
+    A = x.\\
+    ?- opr(con, f, anything, f).\\
+    true.\\
+    ?- opr(con, f, anything, t).\\
+    false.
+}
+
+\subsubsection*{Disjunction}
+\code{
+    ?- opr(dis, x, f, x). \\
+    true.\\
+    ?- opr(dis, f, A, t). \\
+    A = t.\\
+    ?- opr(dis, f, f, t).\\
+    false.
+}
+
+\subsubsection*{Equivalence}
+\code{
+    ?- opr(eqv, A, B, t).\\
+    A = B.\\
+    ?- opr(eqv, x, B, t). \\
+    B = x.\\
+    ?- opr(eqv, f, t, t). \\
+    false.\\
+    ?- opr(eqv, x, x, t).\\
+    true.
+}

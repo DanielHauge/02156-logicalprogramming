@@ -1,0 +1,1 @@
+minmax(A,B,Min,Max) :- A > B -> Min = B, Max=A ; Min = A, Max = B.

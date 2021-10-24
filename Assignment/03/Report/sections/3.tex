@@ -1,0 +1,79 @@
+\newpage
+\section*{Problem 3}
+
+\subsection*{Question 3.1}
+Refuting the validity of the proposition, we negate the formular and try to find counter example:
+
+\Tree[.\textit{$\neg (\exists x \forall y p(x,y) \to \forall y \exists x p(x,y))$} 
+        [ .\textit{$\exists x \forall y p(x,y), \exists y \forall x \neg  p(x,y)$} 
+            [.\textit{$ \exists x \forall y p(x,y), \neg \exists x p(x,a) $ (1)}
+                [.\textit{$ \forall y p(b,y), \neg \exists x p(x,a)$} 
+                    [.\textit{$ \forall y p(b,y), p(b,a), p(b,b), \neg \exists x p(x,a) $}
+                        [.\textit{$  \forall y p(b,y), p(b,a), p(b,b), \neg \exists x p(x,a), \neg p(a,a), \neg p(b,a) $} 
+                            \textit{$\times$}
+                        ] 
+                    ] 
+                ] 
+            ]
+        ]
+]
+
+N.B. duality used at: 
+\begin{itemize}
+    \item (1): $\exists y \forall x \neg p(x,y) \equiv \neg \forall y \neg \exists x p(x,y)$
+\end{itemize}
+which enables the use of delta rule.
+
+The tableau closes as we see the contradiction with: $p(b,a)$ and $\neg p(b,a)$.
+This concludes a complete closed tableau, thus we can say that the formula is valid. Because we negated the formular, the contradiction becomes a tautology.
+
+
+\subsection*{Question 3.2}
+Refuting the validity of the proposition, we negate the formular and try to find counter example:
+
+\Tree[.\textit{$ \neg ( (\forall x (p(x) \to \neg \exists y q(y,x) )) \to (p(a) \to \neg q(a,a)) ) $} 
+        [ .\textit{$  \forall x (p(x) \to \neg \exists y q(y,x) ) , \neg (p(a) \to \neg q(a,a)) $} 
+            [.\textit{$ \forall x (p(x) \to \neg \exists y q(y,x) ) , p(a) , q(a,a) $}
+                [.\textit{$ \forall x (p(x) \to \neg \exists y q(y,x) ), p(a) \to \neg \exists y q(y,a)  , p(a) , q(a,a) $} 
+                    [.\textit{$ \forall x (p(x) \to \neg \exists y q(y,x) ), \neg p(a) , p(a) , q(a,a) $}
+                        \textit{$ \times $} 
+                    ] 
+                    [.\textit{$ \forall x (p(x) \to \neg \exists y q(y,x) ), \neg \exists y q(y,a)  , p(a) , q(a,a) $}
+                        [.\textit{$ \forall x (p(x) \to \neg \exists y q(y,x) ), \neg \exists y q(y,a), \neg q(a,a)  , p(a) , q(a,a) $} 
+                            \textit{$ \times $}
+                        ] 
+                    ]
+                ] 
+            ]
+        ]
+]
+
+The tableau closes with contradictions $\{...,\neg p(a),p(a)\}$ and $\{...,\neg q(a,a), q(a,a)\}$.
+This concludes a complete closed tableau, thus we can say that the formula is valid. Because we negated the formular, the contradiction becomes a tautology.
+
+
+\newpage
+\subsection*{Question 3.3}
+Refuting the validity of the proposition, we negate the formular and try to find counter example:
+
+\Tree[.\textit{$ \neg ( (\forall x p(x) \land \forall x q(x)) \to \forall x (p(x) \land q(x))) $} 
+        [ .\textit{$  (\forall x p(x) \land \forall x q(x)) , \neg \forall x (p(x) \land q(x)) $} 
+            [.\textit{$ \forall x p(x) , \forall x q(x) , \neg \forall x (p(x) \land q(x)) $}
+                [.\textit{$ \forall x p(x) , \forall x q(x) , \neg (p(a) \land q(a)) $} 
+                    [.\textit{$ \forall x p(x) , \forall x q(x) , \neg p(a) $}
+                        [.\textit{$ \forall x p(x), p(a) , \forall x q(x) , \neg p(a) $} 
+                            \textit{$ \times $}
+                        ] 
+                    ] 
+                    [.\textit{$ \forall x p(x) , \forall x q(x) , \neg q(a) $}
+                        [.\textit{$ \forall x p(x) , \forall x q(x), q(a) , \neg q(a) $} 
+                            \textit{$ \times $}
+                        ] 
+                    ] 
+                ] 
+            ]
+        ]
+]
+
+The tableau closes with contradictions $\{...,\neg p(a),p(a)\}$ and $\{...,\neg q(a), q(a)\}$.
+This concludes a complete closed tableau, thus we can say that the formula is valid. Because we negated the formular, the contradiction becomes a tautology.

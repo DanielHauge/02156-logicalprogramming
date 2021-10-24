@@ -1,0 +1,11 @@
+\newpage
+\section*{Problem 4}
+The shortened SeCav is included outcommented in 02156-A3-s201186.pl
+
+Notes on proving $(p \to q) \to p \lor r \to q \lor r$.
+\begin{itemize}
+    \item $\Gamma \vdash \triangle$ can be proven if and only if $\vdash \neg \Gamma, \triangle$, \\ therefor we start applying rules for: $\neg((p \to q) \to p \lor r \to q \lor r)$  
+    \item Used priority: $\alpha > \beta$, utilizing Ext to facilitate the priority. 
+    \item The Ext before $\beta \lor$ removed $\neg p \lor r$ and $r$ because a contradiction is found with $\neg q$ and $q$. 
+    \item Basic rule is used to end the proof.
+\end{itemize}

@@ -1,0 +1,33 @@
+\newpage
+\section*{Problem 2}
+
+\subsection*{Question 2.1}
+Box \fbox{1} can be infered from (5.)
+
+\begin{tabular}{ clr }
+    3. & $\vdash \neg p, \neg q, r, \neg (q \to r)$ & $\beta \to, 2,1$
+\end{tabular}
+
+
+(6.) Introduces $\neg (p \land q)$, so box \fbox{2} can be infered to be:
+
+\begin{tabular}{ clr }
+    5. & $\vdash \neg p, \neg q, r, \neg (p \to (q \to r))$ & $\beta\to,4,3$ \\
+    6. & $\vdash \neg (p \land v), r, \neg (p \to (q \to r))$ & $\alpha\land, 5$\\
+\end{tabular}
+
+\subsection*{Question 2.2}
+Box \fbox{3} is an Axiom with the contradiction of $r$ and $\neg r$ present.
+
+Box \fbox{4} can be infered from (16.)
+
+\begin{tabular}{ clr }
+    15. & $\vdash p \to (q \to r), \neg ((p \land q) \to r)$ & $\alpha\to,14$ \\
+\end{tabular}
+
+
+\subsection*{Question 2.3}
+$A$ is not proved valid with (16.), however with the introduction of the following step it will be proved:\\
+\begin{tabular}{ clr }
+    17. & $\vdash ((p  \land q) \to r) \leftrightarrow (p \to (q  \to r))$ & $\beta\leftrightarrow,15,8$ \\
+\end{tabular}
