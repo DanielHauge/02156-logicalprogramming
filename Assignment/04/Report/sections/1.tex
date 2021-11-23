@@ -1,0 +1,45 @@
+\newpage
+\section*{Problem 1}
+See programs in \textbf{02156-A4-s201186.pl}
+
+\subsection*{Question 1.1}
+The program should succesfully:
+\begin{itemize}
+    \item Query the students whom scored over 40 on the exam.
+    \item Succed if given the correct sorted list of students whom scores over 40 on the exam.
+\end{itemize}
+\code{?- students(S).\\
+    S = [alice, bruce, carol, dorit, erica, james, peter, xenia].\\
+    ?- students([alice, bruce, carol, dorit, erica, james, peter, xenia]).\\
+    true.
+}
+
+The program should fail when:
+\begin{itemize}
+    \item The list given is not sorted.
+    \item The list given is missing a student.
+    \item The list given contains a student whom did not score higher than 40 on the exam
+    \item The list given contains duplications
+\end{itemize}
+\code{?- students([xenia, alice, bruce, carol, dorit, erica, james, peter]).\\
+    false.\\
+    ?- students([alice, bruce, carol, dorit, erica, james, peter]).\\
+    false.\\
+    ?- students([alice, bruce, carol, daniel, dorit, erica, james, peter]).\\
+    false.\\
+    ?- students([alice, alice, bruce, carol, dorit, erica, james, peter, xenia]).\\
+    false.
+}
+\subsection*{Question 1.2}
+The program should succesfully:
+\begin{itemize}
+    \item Query the amount of reward money
+    \item Succed only when given the correct amount of reward money.
+\end{itemize}
+\code{?- money(M).\\
+    M = 5000.\\
+    ?- money(5000).\\
+    true.\\
+    ?- money(4000).\\
+    false.
+}

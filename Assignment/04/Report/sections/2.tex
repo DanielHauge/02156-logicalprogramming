@@ -1,0 +1,58 @@
+\newpage
+\section*{Problem 2}
+
+\subsection*{Question 2.1}
+Refuting the validity of the formular, we negate the formular and try to find counter example.
+
+The clausal form (CNF) of the formular is found:
+
+\begin{center}
+    \begin{tabular}{ clr }
+        $\neg ((p \land q) \to (q \land p))$ & $\equiv \neg ((p \land q) \lor (q \land p))$ \\ 
+        & $\equiv \neg ((\neg p \lor \neg q) \lor (q \land p))$ \\ 
+        & $\equiv (\neg (\neg p \lor \neg q) \land \neg (q \land p))$ \\
+        & $\equiv (\neg (\neg p \lor \neg q) \land (\neg q \lor \neg p))$ \\
+        & $\equiv ( (\neg \neg p \land \neg \neg q) \land (\neg q \lor \neg p))$ \\
+        & $\equiv p \land q \land (\neg q \lor \neg p)$
+    \end{tabular}
+\end{center}
+
+The clauses are now clear and can be used in resolution:
+\begin{center}
+    \begin{tabular}{ clr }
+        1. & $p$ & \\
+        2. & $q$ & \\
+        3. & $\bar{q}, \bar{p}$ & \\
+        4. & $\bar{q}$ & 1,3 \\
+        5. & $\square$ & 2,4 \\
+    \end{tabular}
+\end{center}
+
+The empty clause $\square$ is derived, thus no interpretation of the original set of clauses can hold, it is unsatisfiable. 
+As a result of refutation hence negation, the formular then holds in all interpretation. The formular is valid and therefor a tautology.
+
+\subsection*{Question 2.2}
+Refuting the validity of the formular, we negate the formular and try to find counter example:
+
+\Tree[.\textit{$\neg ((\forall x \exists y (p(x) \land \neg p(y))) \to \neg q(a))$} 
+        [ .\textit{$\forall x \exists y (p(x) \land \neg p(y)), \neg \neg q(a)$} 
+            [.\textit{$ \forall x \exists y (p(x) \land \neg p(y)), q(a) $}
+                [.\textit{$\forall x \exists y (p(x) \land \neg p(y)) ,\exists y (p(a) \land \neg p(y)), q(a)$} 
+                    [.\textit{$\forall x \exists y (p(x) \land \neg p(y)) ,p(a) \land \neg p(b), q(a)$}
+                        [.\textit{$\forall x \exists y (p(x) \land \neg p(y)) , p(a) , \neg p(b), q(a)$} 
+                            [.\textit{$\forall x \exists y (p(x) \land \neg p(y)), \exists y (p(b) \land \neg p(y)) , p(a) , \neg p(b), q(a)$} 
+                                [.\textit{$\forall x \exists y (p(x) \land \neg p(y)), p(b) \land \neg p(c) , p(a) , \neg p(b), q(a)$} 
+                                    [.\textit{$\forall x \exists y (p(x) \land \neg p(y)), p(b) , \neg p(c) , p(a) , \neg p(b), q(a)$} 
+                                        \textit{$\times$}
+                                    ] 
+                                ] 
+                            ] 
+                        ] 
+                    ] 
+                ] 
+            ]
+        ]
+]
+
+The tableau closes as we see the contradiction with: $p(b)$ and $\neg p(b)$.
+This concludes a complete closed tableau, thus we can say that the formula is valid. Because we negated the formular, the contradiction becomes a tautology.

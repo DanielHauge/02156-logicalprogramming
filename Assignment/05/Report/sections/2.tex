@@ -1,0 +1,44 @@
+\newpage
+\section*{Problem 2}
+See programs in \textbf{02156-A5-s201186.pl}
+
+\subsection*{Question 2.1}
+The program \textbf{selectlist(?List)} will succesfully return a list of all nouns and verbs which have a sort order of 100 or less when queried with variable.
+The program will succed if given the correct list.
+\code{?- selectlist(List), length(List,L). \\
+    List = [be, come, do, find, get, give, go, have, know|...],\\
+    L = 20. \\
+    ?- selectlist([be, come, do, find, get,\\
+            give, go, have, know, look,\\
+            make, people, say, see,\\
+            take, think, time, use,\\
+            way, year]
+        ).\\
+    true.
+}
+
+The program will fail when:
+\begin{itemize}
+    \item The list contains duplicates
+    \item The list is missing a noun or verb that should be included
+    \item The list includes a wrong noun or verb.
+\end{itemize}
+N.B. \textbf{...} indicates the first part of the correct list.
+\code{?- selectlist([..., year, year]).\\
+    false.\\
+    ?- selectlist([...]).\\
+    false.\\
+    ?- selectlist([..., year, witness]).\\
+    false.
+}
+
+
+\subsection*{Question 2.2}
+The program \textbf{dump} succesfully finds all words that are both adjectives and adverbs and prints all additional categories with the word.
+\code{?- dump.\\
+above prep\\
+back n\\
+back v\\
+close v
+}
+Given the data from database.pl, then the complete list yields 29 lines in total. See appendix for full output.

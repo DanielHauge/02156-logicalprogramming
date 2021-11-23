@@ -1,0 +1,72 @@
+\newpage
+\section*{Problem 1}
+See programs in \textbf{02156-A5-s201186.pl}
+
+\subsection*{Question 1.1}
+The program should succed when list given is a non empty list and has the first element occur twice.
+\code{?- member1([1,3,1,2]).\\
+    true.\\
+    ?- member1([1,1]).\\
+    true.\\
+    ?- member1([1,1,1]).\\
+    true.
+}
+
+The program should fail if first element does not occur twice, or the list given is empty.
+
+\code{?- member1([1,3,4,2]).\\
+    false. \\
+    ?- member1([]).\\
+    false.\\
+    ?- member1([1]).\\
+    false.
+}
+
+The program can be queried with a variable and will give a list where first element occur twice.
+
+\code{?- member1(X). \\
+    X = [\_3324, \_3324|\_3332].
+}
+
+\newpage
+\subsection*{Question 1.2}
+The program succeds with same solutions as the sample query presented in the assignment description:
+\code{?- member(L,[[a,[a,b,[],c],[[d]]],[123,[4,5]],[[[]]],f(a)]), p(L,R).\\
+    L = [a, [a, b, [], c], [[d]]],\\
+    R = [a, b, c, d] ;\\
+    L = [123, [4, 5]],\\
+    R = [4, 5, 123] ;\\
+    L = [[[]]],\\
+    R = [] ;\\
+    L = f(a),\\
+    R = [f(a)].
+}
+
+The program should fail when:
+\begin{itemize}
+    \item List is not sorted
+    \item Term is missing in List
+    \item List contains List
+    \item Terms are not given.
+\end{itemize}
+
+\code{?- p([123, [4, 5]], [5,4,123]). \\
+    false.\\
+    ?- p([123, [4, 5]], [4,123]).   \\
+    false.\\
+    p([123, [4,5], [2]], [4, 123, [2]]). \\ 
+    false.\\
+    ?- p(R,[1,2]). \\ 
+    false.
+}
+
+The program can be queried with variables:
+\code{?- p([1,4,5,[1,2]],L).\\
+    L = [1, 2, 4, 5].\\
+    false.\\
+    ?- p(R,L).  \\                            
+    R = L, L = [].
+}
+
+
+

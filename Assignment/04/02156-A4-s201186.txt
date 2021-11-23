@@ -1,0 +1,105 @@
+% Problem 1 scores
+score(test,xenia,50).
+score(test,alice,99).
+score(test,bruce,22).
+score(test,carol,77).
+score(test,dorit,50).
+score(test,erica,22).
+score(exam,peter,42).
+score(exam,alice,11).
+score(exam,bruce,88).
+score(exam,carol,33).
+score(exam,dorit,50).
+score(exam,erica,66).
+score(exam,james,77).
+
+% Question 1.1
+students(S) :-  
+    findall(X, (score(_, Name,_), X=Name), Studentnames),   % - 1: Find all students (both exam and test), by utilizing findall
+    setof(X, member(X, Studentnames), StudentSet),          % - 2: Merge duplicates when students took test and exam, by utilizing setof.
+    sort(StudentSet, S).                                    % - 3: Set should be sorted, utilizing sort.
+
+% Question 1.2
+money(M) :- 
+    findall(_, (score(exam, _, S), S @> 40), R),    % - 1: R is a list of all students scoring over 40 on the exam.
+    length(R, I),                                   % - 2: I is the amount of students which scored over 40 on the exam.
+    M is I * 1000.                                  % - 3: M is the total amount of reward money.
+
+
+%%%%%%%%% Problem 3 
+%%% Question: 3.1
+% Imp (Uni p[0]) p[a]
+
+% AlphaImp
+%   Neg Uni p[0]
+%   p[a]
+% GammaUni
+%   Neg p[a]
+%   p[a]
+% Ext
+%   p[a]  
+%   Neg p[a]
+% Basic
+
+%%% Question: 3.2
+% Imp (p[a,a]) (Exi Exi p[1,0])
+
+% AlphaImp
+%   Neg p[a,a]
+%   Exi Exi p[1,0]
+% Ext
+%   Exi Exi p[1,0]
+%   Neg p[a,a]
+% GammaExi
+%   Exi p[a,0]
+%   Neg p[a,a]
+% GammaExi
+%   p[a,a]
+%   Neg p[a,a]
+% Basic
+
+%%% Question: 3.3
+% Imp (Con (Uni p[0]) (Uni q[0])) (Uni (Con p[0] q[0]))
+
+% AlphaImp
+%   Neg (Con (Uni p[0]) (Uni q[0]))
+%   Uni Con p[0] q[0]
+% AlphaCon
+%   Neg Uni p[0]
+%   Neg Uni q[0]
+%   Uni Con p[0] q[0]
+% Ext
+%   Uni Con p[0] q[0]
+%   Neg Uni p[0]
+%   Neg Uni q[0]
+% DeltaUni
+%   Con p[a] q[a]
+%   Neg Uni p[0]
+%   Neg Uni q[0]
+% BetaCon
+%   p[a]
+%   Neg Uni p[0]
+%   Neg Uni q[0]
+% +
+%   q[a]
+%   Neg Uni p[0]
+%   Neg Uni q[0]
+% Ext
+%   Neg Uni p[0]
+%   p[a]
+% +
+%   Neg Uni q[0]
+%   q[a]
+% GammaUni
+%   Neg p[a]
+%   p[a]
+% +
+%   Neg q[a]
+%   q[a]
+% Ext
+%   p[a]
+%   Neg p[a]
+% +
+%   q[a]
+%   Neg q[a]
+% Basic

@@ -1,0 +1,1 @@
+edge(a,c). edge(a,b). edge(b,a).
