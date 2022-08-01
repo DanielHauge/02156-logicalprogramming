@@ -1,2 +1,2 @@
 # 02156-logicalprogramming
-Repository for course (02402) Statistics at DTU
+Repository for course (02156) Logical programming at DTU
